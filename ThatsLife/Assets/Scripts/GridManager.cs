@@ -16,6 +16,7 @@ public class GridManager : MonoBehaviour
 
     [Header("Prefabs")]
     [SerializeField] private GameObject tilePrefab;
+    [SerializeField] private GameObject tileHightlight;
     [SerializeField] private GameObject objectPrefab;
 
     [Header("Data")]
@@ -25,6 +26,8 @@ public class GridManager : MonoBehaviour
 
     void Start()
     {
+        
+
         InitializeGrid();
         GenerateVisualGrid();
     }
@@ -65,27 +68,31 @@ public class GridManager : MonoBehaviour
     // Handle mouse input to place objects on the grid
     void HandleMouseInput()
     {
-        Debug.Log(GetMouseWorldPosition());
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 mouseWorldPos = GetMouseWorldPosition();
-            Vector2Int gridPos = WorldToGrid(mouseWorldPos);
+        Vector3 mouseWorldPos = GetMouseWorldPosition();
+        Vector2Int gridPos = WorldToGrid(mouseWorldPos);
 
-            if (IsWithinBounds(gridPos))
+        if (IsWithinBounds(gridPos))
+        {
+            if (tileHightlight.transform.position != GridToWorld(gridPos.x, gridPos.y))
+            {
+                tileHightlight.transform.position = new Vector3(gridPos.x, gridPos.y, 0);
+            }
+
+            if (Input.GetMouseButtonDown(0))
             {
                 PlaceObject(gridPos.x, gridPos.y);
             }
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            Vector3 mouseWorldPos = GetMouseWorldPosition();
-            Vector2Int gridPos = WorldToGrid(mouseWorldPos);
-            if (IsWithinBounds(gridPos))
+            if (Input.GetMouseButtonDown(1))
             {
                 RemoveObject(gridPos.x, gridPos.y);
             }
         }
+        else if (tileHightlight.transform.position != new Vector3(-3, -3, 0))
+        { 
+            tileHightlight.transform.position = new Vector3(-3, -3, 0);
+        } 
     }
+
 
     // Place an object at the specified grid coordinates, replacing any existing object
     void PlaceObject(int x, int y)
