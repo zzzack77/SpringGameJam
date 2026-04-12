@@ -34,9 +34,7 @@ public class GridManager : MonoBehaviour
         HandleMouseInput();
     }
 
-    // =========================
-    // GRID SETUP
-    // =========================
+    // Set up the grid height x width and initialize each cell with default values
 
     void InitializeGrid()
     {
@@ -51,6 +49,7 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    // Create visual representation of the grid using tilePrefab
     void GenerateVisualGrid()
     {
         for (int x = 0; x < width; x++)
@@ -63,12 +62,10 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    // =========================
-    // INPUT
-    // =========================
-
+    // Handle mouse input to place objects on the grid
     void HandleMouseInput()
     {
+        Debug.Log(GetMouseWorldPosition());
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mouseWorldPos = GetMouseWorldPosition();
@@ -81,10 +78,7 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    // =========================
-    // PLACEMENT LOGIC
-    // =========================
-
+    // Place an object at the specified grid coordinates, replacing any existing object
     void PlaceObject(int x, int y)
     {
         CellData cell = grid[x, y];
@@ -98,19 +92,16 @@ public class GridManager : MonoBehaviour
         Vector3 worldPos = GridToWorld(x, y);
 
         GameObject obj = Instantiate(objectPrefab, worldPos, Quaternion.identity);
-        obj.GetComponent<SpriteRenderer>().sprite = seedSprite;
+        //obj.GetComponent<SpriteRenderer>().sprite = seedSprite;
 
         cell.placedObject = obj;
-        cell.sprite = seedSprite;
         cell.isOccupied = true;
+        //cell.sprite = seedSprite;
 
         Debug.Log($"Placed at: {x},{y}");
     }
 
-    // =========================
-    // HELPER FUNCTIONS
-    // =========================
-
+    // Convert grid coordinates to world position (assuming each cell is 1 unit in size)
     Vector3 GridToWorld(int x, int y)
     {
         return new Vector3(x, y, 0);
@@ -119,8 +110,8 @@ public class GridManager : MonoBehaviour
     Vector2Int WorldToGrid(Vector3 worldPos)
     {
         return new Vector2Int(
-            Mathf.FloorToInt(worldPos.x),
-            Mathf.FloorToInt(worldPos.y)
+            Mathf.RoundToInt(worldPos.x),
+            Mathf.RoundToInt(worldPos.y)
         );
     }
 
@@ -131,9 +122,24 @@ public class GridManager : MonoBehaviour
         return pos;
     }
 
+    // Check if the given grid position is within the bounds of the grid
     bool IsWithinBounds(Vector2Int pos)
     {
         return pos.x >= 0 && pos.x < width &&
                pos.y >= 0 && pos.y < height;
+    }
+
+    void OnDrawGizmos()
+    {
+        if (grid == null) return;
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                Vector3 worldPos = GridToWorld(x, y);
+                Gizmos.color = grid[x, y].isOccupied ? Color.red : Color.green;
+                Gizmos.DrawWireCube(worldPos, Vector3.one * 0.9f);
+            }
+        }
     }
 }

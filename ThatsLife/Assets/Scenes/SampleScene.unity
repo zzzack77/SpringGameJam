@@ -372,7 +372,7 @@ MonoBehaviour:
   width: 32
   height: 18
   tilePrefab: {fileID: 5733254194138736073, guid: 321116ef0d46f9241a716d24e539774d, type: 3}
-  objectPrefab: {fileID: 6755327925348588353, guid: e09731f586bfccc40809015c319ef1fb, type: 3}
+  objectPrefab: {fileID: 5733254194138736073, guid: f8d369e0d14a54a40a3b9dceeb123ec7, type: 3}
   seedSprite: {fileID: -584589845, guid: aa109cdb8d2d871459fdb31065882ef0, type: 3}
 --- !u!4 &1922465851
 Transform:
