@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6058798021337794586}
-  - component: {fileID: 6346878248786400453}
+  - component: {fileID: -5877646875342112890}
   m_Layer: 0
   m_Name: PlantTile
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6346878248786400453
+--- !u!212 &-5877646875342112890
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.092866, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.24008763, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

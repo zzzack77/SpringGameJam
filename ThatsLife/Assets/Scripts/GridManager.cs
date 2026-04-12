@@ -12,7 +12,7 @@ public class GridManager : MonoBehaviour
 {
     [Header("Grid Settings")]
     [SerializeField] private int width = 32;
-    [SerializeField] private int height = 18;
+    [SerializeField] private int height = 24;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject tilePrefab;
@@ -76,6 +76,15 @@ public class GridManager : MonoBehaviour
                 PlaceObject(gridPos.x, gridPos.y);
             }
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 mouseWorldPos = GetMouseWorldPosition();
+            Vector2Int gridPos = WorldToGrid(mouseWorldPos);
+            if (IsWithinBounds(gridPos))
+            {
+                RemoveObject(gridPos.x, gridPos.y);
+            }
+        }
     }
 
     // Place an object at the specified grid coordinates, replacing any existing object
@@ -99,6 +108,17 @@ public class GridManager : MonoBehaviour
         //cell.sprite = seedSprite;
 
         Debug.Log($"Placed at: {x},{y}");
+    }
+    void RemoveObject(int x, int y)
+    {
+        CellData cell = grid[x, y];
+        if (cell.placedObject != null)
+        {
+            Destroy(cell.placedObject);
+            cell.placedObject = null;
+            cell.isOccupied = false;
+            cell.sprite = null;
+        }
     }
 
     // Convert grid coordinates to world position (assuming each cell is 1 unit in size)
