@@ -15,7 +15,7 @@ public class GrowPlant : MonoBehaviour, IGrowable
 
     public void Grow()
     {
-        Debug.Log(plantData.plantName);
+       
 
         spriteRenderer.sprite = ChangeSprite();
     }
