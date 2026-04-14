@@ -4,7 +4,7 @@ public class HarvestPlant : MonoBehaviour, IHarvestable
 {
 
     [SerializeField] private PlantData plantData;
-    [SerializeField] private MoneyManager monManager;
+    private MoneyManager monManager;
     private Plant plant;
 
     private void Awake()
