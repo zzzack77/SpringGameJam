@@ -145,4 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HarvestPlant
   plantData: {fileID: 11400000, guid: 43faaab6058d64947976332c8388af2b, type: 2}
-  monManager: {fileID: 0}
+  popupText: {fileID: 853780678110682744, guid: 3247fe7a3fbe0bf41a2563a0e646be39, type: 3}

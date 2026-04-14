@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class HarvestPlant : MonoBehaviour, IHarvestable
@@ -6,11 +7,17 @@ public class HarvestPlant : MonoBehaviour, IHarvestable
     [SerializeField] private PlantData plantData;
     private MoneyManager monManager;
     private Plant plant;
+    private GrowPlant growPlant;
+    private GameObject popupCanvas;
 
+    [SerializeField] private GameObject popupText;
     private void Awake()
     {
         plant = GetComponent<Plant>();
+        growPlant = GetComponent<GrowPlant>();
         monManager = FindAnyObjectByType<MoneyManager>();
+        popupCanvas = GameObject.Find("UI Popups");
+        
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,7 +34,12 @@ public class HarvestPlant : MonoBehaviour, IHarvestable
     public void Harvest()
     {
         // Check to see if plant is in right growth stage
-        monManager.AddMoney(plantData.plantPrice);
+        monManager.AddMoney(plantData.harvestPrice);
+        //if (growPlant.curre)
+        GameObject popup = Instantiate(popupText, transform.position, Quaternion.identity, popupCanvas.transform);
+        popup.GetComponentInChildren<TextMeshProUGUI>().text = "$" + plantData.harvestPrice.ToString();
+
+
     }
 
 }
