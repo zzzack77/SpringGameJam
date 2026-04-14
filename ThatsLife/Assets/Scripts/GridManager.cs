@@ -17,7 +17,8 @@ public class GridManager : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private GameObject tilePrefab;
     [SerializeField] private GameObject tileHightlight;
-    [SerializeField] private GameObject objectPrefab;
+    [SerializeField] private GameObject[] objectPrefab;
+    [SerializeField] private int currentPrefabIndex;
 
     public CellData[,] grid;
 
@@ -118,7 +119,7 @@ public class GridManager : MonoBehaviour
 
         Vector3 worldPos = GridToWorld(x, y);
 
-        GameObject obj = Instantiate(objectPrefab, worldPos, Quaternion.identity);
+        GameObject obj = Instantiate(objectPrefab[currentPrefabIndex], worldPos, Quaternion.identity);
         //obj.GetComponent<SpriteRenderer>().sprite = seedSprite;
 
         cell.placedObject = obj;
