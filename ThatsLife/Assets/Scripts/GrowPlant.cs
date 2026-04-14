@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class GrowPlant : MonoBehaviour, IGrowable
 {
+    
     [SerializeField] private PlantData plantData;
     private Respawning respawning;
 
@@ -13,6 +15,7 @@ public class GrowPlant : MonoBehaviour, IGrowable
 
     private float respawnTimer = 0f;
     private float respawnInterval = 0.1f;
+
 
     private void Awake()
     {

@@ -136,6 +136,7 @@ public class GridManager : MonoBehaviour
         CellData cell = grid[x, y];
         if (cell.placedObject != null)
         {
+            cell.placedObject.GetComponent<IHarvestable>().Harvest();
             Destroy(cell.placedObject);
             cell.placedObject = null;
             cell.isOccupied = false;
