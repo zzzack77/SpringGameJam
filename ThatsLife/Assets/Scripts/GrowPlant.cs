@@ -1,11 +1,14 @@
 using System;
+using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class GrowPlant : MonoBehaviour, IGrowable
 {
-    
-    [SerializeField] private PlantData plantData;
+    private GridManager gridManager;
     private Respawning respawning;
+
+    [SerializeField] private PlantData plantData;
 
     private SpriteRenderer spriteRenderer;
 
@@ -14,26 +17,39 @@ public class GrowPlant : MonoBehaviour, IGrowable
     int stageIndex;
 
     private float respawnTimer = 0f;
-    private float respawnInterval = 0.1f;
+    private float respawnInterval = 6f;
+    private float respawnIntervalVariation = 2f;
+    private float currentRespawnInterval;
+
+    private float deathTimeRandomVariation = 5.0f;
 
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        respawning = FindAnyObjectByType<Respawning>();
+        respawning = GetComponent<Respawning>();
+        gridManager = FindAnyObjectByType<GridManager>();
+        currentRespawnInterval = UnityEngine.Random.Range(respawnInterval - respawnIntervalVariation, respawnInterval + respawnIntervalVariation);
     }
 
     public void Grow()
     {
+        if (stageIndex >= plantData.plantSprites.Length - 1)
+        {
+            StartCoroutine(Death());
+        }
         //Debug.Log(plantData.plantName);
 
         spriteRenderer.sprite = ChangeSprite();
 
         respawnTimer += Time.deltaTime;
-        if (respawnTimer >= respawnInterval)
+
+        if (respawnTimer >= currentRespawnInterval)
         {
+            Debug.Log("current respawn interval" + currentRespawnInterval);
             respawnTimer = 0f;
             respawning.Respawn(stageIndex);
+            currentRespawnInterval = UnityEngine.Random.Range(respawnInterval - respawnIntervalVariation, respawnInterval + respawnIntervalVariation);
         }
     }
 
@@ -47,6 +63,15 @@ public class GrowPlant : MonoBehaviour, IGrowable
         stageIndex = Mathf.Clamp(Mathf.FloorToInt(growthProgress * stageCount), 0, stageCount - 1);
 
         return plantData.plantSprites[stageIndex];
+    }
+
+    
+
+    IEnumerator Death()
+    {
+        float randomDeathTime = UnityEngine.Random.Range(plantData.deathTime - deathTimeRandomVariation, plantData.deathTime + deathTimeRandomVariation);
+        yield return new WaitForSeconds(randomDeathTime);
+        gridManager.RemoveObjectFromCell((int)this.transform.position.x, (int)this.transform.position.y);
     }
 
 }

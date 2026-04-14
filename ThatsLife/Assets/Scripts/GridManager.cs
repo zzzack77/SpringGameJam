@@ -6,7 +6,6 @@ public class CellData
 {
     public bool isOccupied;
     public GameObject placedObject;
-    public Sprite sprite;
 }
 
 public class GridManager : MonoBehaviour
@@ -19,9 +18,6 @@ public class GridManager : MonoBehaviour
     [SerializeField] private GameObject tilePrefab;
     [SerializeField] private GameObject tileHightlight;
     [SerializeField] private GameObject objectPrefab;
-
-    [Header("Data")]
-    [SerializeField] private Sprite seedSprite;
 
     public CellData[,] grid;
 
@@ -127,7 +123,6 @@ public class GridManager : MonoBehaviour
 
         cell.placedObject = obj;
         cell.isOccupied = true;
-        //cell.sprite = seedSprite;
 
         Debug.Log($"Placed at: {x},{y}");
     }
@@ -140,7 +135,17 @@ public class GridManager : MonoBehaviour
             Destroy(cell.placedObject);
             cell.placedObject = null;
             cell.isOccupied = false;
-            cell.sprite = null;
+        }
+    }
+    
+    public void RemoveObjectFromCell(int x, int y)
+    {
+        CellData cell = grid[x, y];
+        if (cell.placedObject != null)
+        {
+            Destroy(cell.placedObject);
+            cell.placedObject = null;
+            cell.isOccupied = false;
         }
     }
     
