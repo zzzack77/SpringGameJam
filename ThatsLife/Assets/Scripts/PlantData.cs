@@ -19,6 +19,6 @@ public class PlantData : ScriptableObject
 
 
     public int deathTime = 5;
-    public int harvestIndex = 5;
-    public int worseHarvestIndex = 6;
+    public int harvestIndex = 4;
+    public int worseHarvestIndex = 5;
 }

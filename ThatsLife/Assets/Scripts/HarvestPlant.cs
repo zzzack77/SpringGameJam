@@ -34,10 +34,20 @@ public class HarvestPlant : MonoBehaviour, IHarvestable
     public void Harvest()
     {
         // Check to see if plant is in right growth stage
-        monManager.AddMoney(plantData.harvestPrice);
-        //if (growPlant.curre)
-        GameObject popup = Instantiate(popupText, transform.position, Quaternion.identity, popupCanvas.transform);
-        popup.GetComponentInChildren<TextMeshProUGUI>().text = "$" + plantData.harvestPrice.ToString();
+        
+        if (growPlant.StageIndex == plantData.harvestIndex)
+        {
+            monManager.AddMoney(plantData.harvestPrice);
+            GameObject popup = Instantiate(popupText, transform.position, Quaternion.identity, popupCanvas.transform);
+            popup.GetComponentInChildren<TextMeshProUGUI>().text = "$" + plantData.harvestPrice.ToString();
+        }
+
+        else if (growPlant.StageIndex == plantData.worseHarvestIndex)
+        {
+            monManager.AddMoney(plantData.worseHarvestPrice);
+            GameObject popup = Instantiate(popupText, transform.position, Quaternion.identity, popupCanvas.transform);
+            popup.GetComponentInChildren<TextMeshProUGUI>().text = "$" + plantData.worseHarvestPrice.ToString();
+        }
 
 
     }
