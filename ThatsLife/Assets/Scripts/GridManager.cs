@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -30,11 +31,25 @@ public class GridManager : MonoBehaviour
 
         InitializeGrid();
         GenerateVisualGrid();
+
+
+
+
+        
     }
 
     void Update()
     {
         HandleMouseInput();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Vector2[] b = CheckSurroundingTilesAvailability(32,64, 2);
+            for (int i = 0; i < b.Length; i++)
+            {
+                Debug.Log(b[i]);
+            }
+            Debug.Log(b.Length);
+        }
     }
 
     // Set up the grid height x width and initialize each cell with default values
@@ -95,7 +110,7 @@ public class GridManager : MonoBehaviour
 
 
     // Place an object at the specified grid coordinates, replacing any existing object
-    void PlaceObject(int x, int y)
+    public void PlaceObject(int x, int y)
     {
         CellData cell = grid[x, y];
 
@@ -116,7 +131,7 @@ public class GridManager : MonoBehaviour
 
         Debug.Log($"Placed at: {x},{y}");
     }
-    void RemoveObject(int x, int y)
+    public void RemoveObject(int x, int y)
     {
         CellData cell = grid[x, y];
         if (cell.placedObject != null)
@@ -127,6 +142,26 @@ public class GridManager : MonoBehaviour
             cell.isOccupied = false;
             cell.sprite = null;
         }
+    }
+    
+    public Vector2[] CheckSurroundingTilesAvailability(int x, int y, int radius)
+    {
+        Vector2[] avaliable = {};
+
+        for (int i = x - radius; i <= x + radius; i++)
+        {
+            for (int j = y - radius; j <= y + radius; j++)
+            {
+                if (IsWithinBounds(new Vector2Int(i, j)) && !grid[i, j].isOccupied)
+                {
+                    avaliable = avaliable.Append(new Vector2(i, j)).ToArray();
+                    // Add available position to the list
+                    //avaliable.Add(new Vector2(i, j));
+                }
+            }
+        }
+
+        return avaliable;
     }
 
     // Convert grid coordinates to world position (assuming each cell is 1 unit in size)
@@ -143,6 +178,7 @@ public class GridManager : MonoBehaviour
         );
     }
 
+    // Get the world position of the mouse cursor, with z set to 0 for 2D
     Vector3 GetMouseWorldPosition()
     {
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
