@@ -21,7 +21,11 @@ MonoBehaviour:
   - {fileID: 1120195618, guid: aa109cdb8d2d871459fdb31065882ef0, type: 3}
   - {fileID: -1055055520, guid: aa109cdb8d2d871459fdb31065882ef0, type: 3}
   - {fileID: -584589845, guid: aa109cdb8d2d871459fdb31065882ef0, type: 3}
+  seedPrice: 4
   growthTime: 50
   needsWater: 0
   regrows: 0
-  plantPrice: 10
+  harvestPrice: 10
+  worseHarvestPrice: 7
+  harvestIndex: 5
+  worseHarvestIndex: 6
