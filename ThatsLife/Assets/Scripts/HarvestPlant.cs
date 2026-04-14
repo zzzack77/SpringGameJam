@@ -11,6 +11,9 @@ public class HarvestPlant : MonoBehaviour, IHarvestable
     private GameObject popupCanvas;
 
     [SerializeField] private GameObject popupText;
+
+    [SerializeField] private GameObject[] harvestSounds;
+    [SerializeField] private GameObject[] badHarvestSounds;
     private void Awake()
     {
         plant = GetComponent<Plant>();
@@ -38,6 +41,9 @@ public class HarvestPlant : MonoBehaviour, IHarvestable
         if (growPlant.StageIndex == plantData.harvestIndex)
         {
             monManager.AddMoney(plantData.harvestPrice);
+
+            AudioManager.instance.SpawnRandomAudio(harvestSounds);
+
             GameObject popup = Instantiate(popupText, transform.position, Quaternion.identity, popupCanvas.transform);
             popup.GetComponentInChildren<TextMeshProUGUI>().text = "$" + plantData.harvestPrice.ToString();
         }
@@ -45,11 +51,15 @@ public class HarvestPlant : MonoBehaviour, IHarvestable
         else if (growPlant.StageIndex == plantData.worseHarvestIndex)
         {
             monManager.AddMoney(plantData.worseHarvestPrice);
+
+            AudioManager.instance.SpawnRandomAudio(harvestSounds);
+
             GameObject popup = Instantiate(popupText, transform.position, Quaternion.identity, popupCanvas.transform);
             popup.GetComponentInChildren<TextMeshProUGUI>().text = "$" + plantData.worseHarvestPrice.ToString();
         }
 
-
+        // Play dud harvest sound (duller/ bad sound for harvesting at wrong time)
+        AudioManager.instance.SpawnRandomAudio(badHarvestSounds);
     }
 
 }
