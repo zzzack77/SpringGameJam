@@ -13,8 +13,15 @@ public class GrowPlant : MonoBehaviour, IGrowable
     private SpriteRenderer spriteRenderer;
 
     private float growthTimer = 0;
-    int stageCount;
-    int stageIndex;
+
+    
+    private int stageCount;
+    private int stageIndex;
+
+    public int StageIndex
+    {
+        get { return stageIndex; }
+    }
 
     private float respawnTimer = 0f;
     private float respawnInterval = 6f;

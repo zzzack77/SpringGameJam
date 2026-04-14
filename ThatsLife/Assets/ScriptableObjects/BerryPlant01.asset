@@ -27,5 +27,6 @@ MonoBehaviour:
   regrows: 0
   harvestPrice: 10
   worseHarvestPrice: 7
-  harvestIndex: 5
-  worseHarvestIndex: 6
+  deathTime: 5
+  harvestIndex: 4
+  worseHarvestIndex: 5
