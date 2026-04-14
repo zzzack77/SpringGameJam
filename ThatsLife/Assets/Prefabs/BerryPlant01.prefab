@@ -146,3 +146,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HarvestPlant
   plantData: {fileID: 11400000, guid: 43faaab6058d64947976332c8388af2b, type: 2}
   popupText: {fileID: 853780678110682744, guid: 3247fe7a3fbe0bf41a2563a0e646be39, type: 3}
+  harvestSounds:
+  - {fileID: 8874174506319031573, guid: 6c7fd6c51c4514249b0c0edee39c378e, type: 3}
+  - {fileID: 14673717500883367, guid: 2216d2af89324a640828304505e529d5, type: 3}
+  - {fileID: 2563526499630928100, guid: 0490b4440a29e514b8784c400aa2a623, type: 3}
+  - {fileID: 80292738359763959, guid: 2a7c0ce98711722449f44ce42cebf525, type: 3}
+  badHarvestSounds:
+  - {fileID: 5970333726037176292, guid: 0aabae8f9df87fe43a4824a5888ba963, type: 3}
+  - {fileID: 6795704603003105729, guid: fd5e113fb29938849ac83c3af10818bb, type: 3}
+  - {fileID: 6264901397217308331, guid: c217027e9ec03dd4ebe2675ea147b6e9, type: 3}
