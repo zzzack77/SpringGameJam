@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &229319330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 960979261662236040, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+  m_PrefabInstance: {fileID: 3774848829716022101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32144e82218e143478efccac69b572bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoneyManager
 --- !u!1 &1854251371
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +230,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4961007857249540720, guid: aca31322f227871429271400e5ad4291, type: 3}
+      propertyPath: monManager
+      value: 
+      objectReference: {fileID: 229319330}
     - target: {fileID: 7600369466664433440, guid: aca31322f227871429271400e5ad4291, type: 3}
       propertyPath: m_Name
       value: BerryPlant01
@@ -268,6 +283,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca31322f227871429271400e5ad4291, type: 3}
+--- !u!1001 &3774848829716022101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1859062965139525646, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_Name
+      value: Money Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444704647733419962, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.89326
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444704647733419962, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.64782
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444704647733419962, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444704647733419962, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444704647733419962, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444704647733419962, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444704647733419962, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444704647733419962, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444704647733419962, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444704647733419962, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
 --- !u!1001 &9090934978207214967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,3 +404,4 @@ SceneRoots:
   - {fileID: 1854251374}
   - {fileID: 9090934978207214967}
   - {fileID: 3082703349066495463}
+  - {fileID: 3774848829716022101}

@@ -3,10 +3,12 @@ using UnityEngine;
 public class Plant : MonoBehaviour
 {
     private IGrowable growPlant;
+    private IHarvestable harvestPlant;
 
     private void Awake()
     {
         growPlant = GetComponent<IGrowable>();
+        harvestPlant = GetComponent<IHarvestable>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,5 +20,10 @@ public class Plant : MonoBehaviour
     void Update()
     {
         growPlant.Grow();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            harvestPlant.Harvest();
+        }
     }
 }

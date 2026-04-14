@@ -14,4 +14,8 @@ public class PlantData : ScriptableObject
 
     [Header("Harvest")]
     public int plantPrice = 10;
+
+
+
+    public int harvestIndex = 5;
 }

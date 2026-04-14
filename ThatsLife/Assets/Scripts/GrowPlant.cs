@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
 
 public class GrowPlant : MonoBehaviour, IGrowable
 {
+    
     [SerializeField] private PlantData plantData;
 
     private SpriteRenderer spriteRenderer;
 
     private float growthTimer = 0;
+
 
     private void Awake()
     {
