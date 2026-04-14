@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8908763975473440764}
   - component: {fileID: 3982815935349196546}
   - component: {fileID: 2434099876954153202}
+  - component: {fileID: 4961007857249540720}
   - component: {fileID: 621405625613992473}
   m_Layer: 0
   m_Name: BerryPlant01
@@ -59,6 +60,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrowPlant
   plantData: {fileID: 11400000, guid: 43faaab6058d64947976332c8388af2b, type: 2}
+--- !u!114 &4961007857249540720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600369466664433440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b6274b99e388b4bac991801ac33312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HarvestPlant
+  plantData: {fileID: 11400000, guid: 43faaab6058d64947976332c8388af2b, type: 2}
+  monManager: {fileID: 0}
 --- !u!212 &621405625613992473
 SpriteRenderer:
   serializedVersion: 2

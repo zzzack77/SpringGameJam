@@ -1,3 +1,5 @@
+using System;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public enum Season
@@ -9,6 +11,9 @@ public enum Season
 }
 public class TimeManager : MonoBehaviour
 {
+    public static event Action<int> OnDayChanged;
+    public static event Action<Season> OnSeasonChanged;
+    public static event Action<int> OnYearChanged;
     public Season currentSeason;
     // Day Length is how many seconds each day will be
     private float dayLength = 15f;
@@ -19,12 +24,14 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] private float startingDay = 50;
 
-    private float currentYear = 1;
+    private int currentYear = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentSeason = Season.Spring;
         totalGameTime = dayLength * startingDay; // Sets the game time to be in line with the starting day
+
+        OnYearChanged?.Invoke(currentYear);
     }
 
     // Update is called once per frame
@@ -38,7 +45,7 @@ public class TimeManager : MonoBehaviour
         if (dayNumber != lastDayNumber)
         {
             lastDayNumber = dayNumber;
-            Debug.Log("New Day: " + dayNumber);
+            OnDayChanged?.Invoke(dayNumber);
             
             // Check to see what season we are in based on the day
             if (dayNumber >= 0 && dayNumber < 79 || dayNumber > 335) { currentSeason = Season.Winter; } // Winter
@@ -50,11 +57,11 @@ public class TimeManager : MonoBehaviour
             { 
                 totalGameTime = 0;
                 currentYear += 1;
-              
-                print("New Year");
+
+                OnYearChanged?.Invoke(currentYear);
             }
 
-                Debug.Log("Season: " + currentSeason.ToString());
+            OnSeasonChanged?.Invoke(currentSeason);
         }
 
        
