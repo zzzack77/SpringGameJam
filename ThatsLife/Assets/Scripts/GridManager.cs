@@ -49,8 +49,14 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    // Set up the grid height x width and initialize each cell with default values
+    public void Button(int x)
+    {
+        currentPrefabIndex = x;
+    }
 
+
+
+    // Set up the grid height x width and initialize each cell with default values
     void InitializeGrid()
     {
         grid = new CellData[width, height];
@@ -92,7 +98,7 @@ public class GridManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                PlaceObject(gridPos.x, gridPos.y);
+                PlaceObject(gridPos.x, gridPos.y, currentPrefabIndex);
             }
             if (Input.GetMouseButtonDown(1))
             {
@@ -107,20 +113,42 @@ public class GridManager : MonoBehaviour
 
 
     // Place an object at the specified grid coordinates, replacing any existing object
-    public void PlaceObject(int x, int y)
+    public void PlaceObject(int x, int y, int index = -1, GameObject gameObject = null)
     {
-        CellData cell = grid[x, y];
+        
+        // index out of range check
+        if (index != -1 && (index < 0 || index >= objectPrefab.Length))
+        {
+            Debug.LogError("Index out of range" + index);
+            
+            return;
+        }
 
+
+        CellData cell = grid[x, y];
+        // Check where you want to place the object
+        Vector3 worldPos = GridToWorld(x, y);
+
+        // check if cell is ocupied
+        if (cell.isOccupied) { return; }
+
+        GameObject obj;
+
+        // Instantiate the object depending on idex or game object
+        // if they fail return
+        if (index != -1) { obj = Instantiate(objectPrefab[index], worldPos, Quaternion.identity); }
+        else if (gameObject != null) { obj = Instantiate(gameObject, worldPos, Quaternion.identity); }
+        else { return; }
+
+
+        // If the instantiate passes then destroy current gameobejct in CellData and replace with new obejct
+        
+        // ---- remove in future maybe as unneccissary -------
         // Remove existing object
         if (cell.placedObject != null)
         {
             Destroy(cell.placedObject);
         }
-
-        Vector3 worldPos = GridToWorld(x, y);
-
-        GameObject obj = Instantiate(objectPrefab[currentPrefabIndex], worldPos, Quaternion.identity);
-        //obj.GetComponent<SpriteRenderer>().sprite = seedSprite;
 
         cell.placedObject = obj;
         cell.isOccupied = true;

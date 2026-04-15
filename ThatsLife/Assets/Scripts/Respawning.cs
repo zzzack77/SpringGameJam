@@ -47,7 +47,7 @@ public class Respawning : MonoBehaviour
             Vector2 place = availableSpaces[rand];
 
             //gridManager.PlaceObject((int)place.x, (int)place.y);
-            gridManager.PlaceObject((int)availableSpaces[rand].x, (int)availableSpaces[rand].y);
+            gridManager.PlaceObject((int)availableSpaces[rand].x, (int)availableSpaces[rand].y, -1, this.gameObject);
         }
         else
         {
