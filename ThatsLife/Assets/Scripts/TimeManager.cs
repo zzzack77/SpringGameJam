@@ -15,6 +15,7 @@ public class TimeManager : MonoBehaviour
     public static event Action<Season> OnSeasonChanged;
     public static event Action<int> OnYearChanged;
     public Season currentSeason;
+    private Season trackedSeason;
     // Day Length is how many seconds each day will be
     private float dayLength = 15f;
     private float totalGameTime;
@@ -25,13 +26,25 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private float startingDay = 50;
 
     private int currentYear = 1;
+
+    [SerializeField] private GameObject winterMusicLoop;
+    [SerializeField] private GameObject springMusicLoop;
+    [SerializeField] private GameObject summerMusicLoop;
+    [SerializeField] private GameObject autumnMusicLoop;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentSeason = Season.Spring;
+        
+        trackedSeason = currentSeason;
+
+        
+
         totalGameTime = dayLength * startingDay; // Sets the game time to be in line with the starting day
 
+        OnSeasonChanged?.Invoke(currentSeason);
         OnYearChanged?.Invoke(currentYear);
+
+        SetSeasonMusic();
     }
 
     // Update is called once per frame
@@ -61,9 +74,42 @@ public class TimeManager : MonoBehaviour
                 OnYearChanged?.Invoke(currentYear);
             }
 
-            OnSeasonChanged?.Invoke(currentSeason);
+            if (trackedSeason != currentSeason)
+            {
+                OnSeasonChanged?.Invoke(currentSeason);
+
+
+                SetSeasonMusic();
+
+                
+                trackedSeason = currentSeason;
+            }
+            
         }
 
        
+    }
+
+    private void SetSeasonMusic()
+    {
+        // Change Music
+        switch (currentSeason)
+        {
+            case Season.Winter:
+                AudioManager.instance.SpawnMusic(winterMusicLoop);
+                break;
+
+            case Season.Spring:
+                AudioManager.instance.SpawnMusic(springMusicLoop);
+                break;
+
+            case Season.Summer:
+                AudioManager.instance.SpawnMusic(summerMusicLoop);
+                break;
+
+            case Season.Autumn:
+                AudioManager.instance.SpawnMusic(autumnMusicLoop);
+                break;
+        }
     }
 }

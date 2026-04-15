@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     private List<GameObject> soundPrefabs = new List<GameObject>();
 
+    private GameObject currentMusicPrefab;
+    public float musicFadeRate = 0.1f;
     private void Awake()
     {
         if (instance == null)
@@ -55,5 +58,32 @@ public class AudioManager : MonoBehaviour
         soundPrefabs.Add(sound);
     }
 
- 
+    public void SpawnMusic(GameObject musicPrefab)
+    {
+        if (currentMusicPrefab == null)
+        {
+            currentMusicPrefab = Instantiate(musicPrefab, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            AudioSource musicSource = currentMusicPrefab.GetComponent<AudioSource>();
+            StartCoroutine(MusicFadeWait(musicPrefab, musicSource));
+            
+        }
+        
+    }
+
+    private IEnumerator MusicFadeWait(GameObject musicPrefab, AudioSource musicSource)
+    {
+        while (musicSource.volume > 0f)
+        {
+            musicSource.volume -= musicFadeRate * Time.deltaTime;
+            yield return null;
+        }
+
+        musicSource.volume = 0f;
+
+        Destroy(currentMusicPrefab);
+        currentMusicPrefab = Instantiate(musicPrefab, transform.position, Quaternion.identity);
+    }
 }
