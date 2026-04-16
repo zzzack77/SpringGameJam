@@ -852,7 +852,7 @@ MonoBehaviour:
   objectPrefab:
   - {fileID: 7600369466664433440, guid: aca31322f227871429271400e5ad4291, type: 3}
   - {fileID: 7600369466664433440, guid: 0366af9fd129a73459cc8d1f60ad6606, type: 3}
-  - {fileID: 7600369466664433440, guid: e1494262580302d40b88aa7c03863f22, type: 3}
+  - {fileID: 7600369466664433440, guid: e5bb82be88a623243a3f815c44d9ca72, type: 3}
   - {fileID: 7600369466664433440, guid: 7ca971a97a03fef49803ea04da61ed8f, type: 3}
   currentPrefabIndex: 3
 --- !u!4 &2127648212
