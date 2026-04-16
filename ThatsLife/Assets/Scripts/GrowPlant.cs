@@ -8,7 +8,7 @@ public class GrowPlant : MonoBehaviour, IGrowable
     private GridManager gridManager;
     private Respawning respawning;
 
-    [SerializeField] private PlantData plantData;
+    [SerializeField] public PlantData plantData;
 
     private SpriteRenderer spriteRenderer;
 
@@ -17,6 +17,7 @@ public class GrowPlant : MonoBehaviour, IGrowable
     
     private int stageCount;
     private int stageIndex;
+    private int currentStageIndex;
 
     public int StageIndex
     {
@@ -30,7 +31,7 @@ public class GrowPlant : MonoBehaviour, IGrowable
 
     private float deathTimeRandomVariation = 5.0f;
 
-
+    private float growthChance = 1f;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -64,10 +65,16 @@ public class GrowPlant : MonoBehaviour, IGrowable
     {
         growthTimer += Time.deltaTime;
 
-        float growthProgress = growthTimer / plantData.growthTime;
+        float growthProgress = growthTimer / plantData.growthTime * growthChance;
 
         stageCount = plantData.plantSprites.Length;
         stageIndex = Mathf.Clamp(Mathf.FloorToInt(growthProgress * stageCount), 0, stageCount - 1);
+        currentStageIndex = stageIndex;
+
+        if (currentStageIndex != stageIndex)
+        {
+            growthChance = UnityEngine.Random.value;
+        }
 
         return plantData.plantSprites[stageIndex];
     }

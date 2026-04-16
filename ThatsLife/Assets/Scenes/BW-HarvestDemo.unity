@@ -616,6 +616,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 960979261662236040, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: money
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 960979261662236040, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
+      propertyPath: maxMoney
+      value: 1000000
+      objectReference: {fileID: 0}
     - target: {fileID: 1859062965139525646, guid: 202a3fa78aabe824ea1d674fc0837352, type: 3}
       propertyPath: m_Name
       value: Money Manager
@@ -842,10 +850,11 @@ MonoBehaviour:
   tilePrefab: {fileID: 5733254194138736073, guid: 321116ef0d46f9241a716d24e539774d, type: 3}
   tileHightlight: {fileID: 670241910}
   objectPrefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  currentPrefabIndex: 0
+  - {fileID: 7600369466664433440, guid: aca31322f227871429271400e5ad4291, type: 3}
+  - {fileID: 7600369466664433440, guid: 0366af9fd129a73459cc8d1f60ad6606, type: 3}
+  - {fileID: 7600369466664433440, guid: e1494262580302d40b88aa7c03863f22, type: 3}
+  - {fileID: 7600369466664433440, guid: 7ca971a97a03fef49803ea04da61ed8f, type: 3}
+  currentPrefabIndex: 3
 --- !u!4 &2127648212
 Transform:
   m_ObjectHideFlags: 0
