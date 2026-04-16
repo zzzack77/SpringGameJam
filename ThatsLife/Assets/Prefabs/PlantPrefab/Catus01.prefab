@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5174610588104351539}
   - component: {fileID: 621405625613992473}
   - component: {fileID: -7013195615027907955}
+  - component: {fileID: 6627397800791645278}
   m_Layer: 0
   m_Name: Catus01
   m_TagString: Untagged
@@ -146,3 +147,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HarvestPlant
   plantData: {fileID: 11400000, guid: 5277b173181a4334ca6534ff5bd66ffb, type: 2}
   popupText: {fileID: 853780678110682744, guid: 3247fe7a3fbe0bf41a2563a0e646be39, type: 3}
+  harvestSounds: []
+  badHarvestSounds: []
+--- !u!114 &6627397800791645278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600369466664433440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af3f38bd4a04704f848b727d296a19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  material: {fileID: 2100000, guid: 587c6ae8dcc457b4f9bb285758cbb5ce, type: 2}
+  shadowOffset_Sunrise: {x: 0.16, y: 0.4, z: 0}
+  shadowScale_Sunrise: {x: -1, y: 1.65, z: 1}
+  shadowRotation_Sunrise: {x: 0, y: 0, z: 90}
+  shadowOffset_Midday: {x: 0, y: 0.26, z: 0}
+  shadowScale_Midday: {x: -1, y: 0.8, z: 1}
+  shadowRotation_Midday: {x: 0, y: 0, z: 180}
+  shadowOffset_Sunset: {x: -0.16, y: 0.4, z: 0}
+  shadowScale_Sunset: {x: -1, y: 1.65, z: 1}
+  shadowRotation_Sunset: {x: 0, y: 0, z: 270}
+  shadowOffset: {x: 0, y: 0, z: 0}
+  shadowScale: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  dayDuration: 60
+  timer: 0
