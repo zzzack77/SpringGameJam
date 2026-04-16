@@ -41,22 +41,43 @@ public class Shadow : MonoBehaviour
     {
         timeManager = FindAnyObjectByType<TimeManager>();
         growPlant = GetComponent<GrowPlant>();
+        
+        if (transform.childCount > 0)
+        {
+            pivot = transform.Find("ShadowPivot").gameObject;
+            shadow = pivot.transform.Find("Shadow").gameObject;
+            spriteRenderer = shadow.GetComponent<SpriteRenderer>();
+            Debug.Log(pivot);
+            Debug.Log(shadow);
+        }
+        else 
+        {
+            pivot = new GameObject("ShadowPivot");
+            shadow = new GameObject("Shadow");
+            spriteRenderer = shadow.AddComponent<SpriteRenderer>();
 
+        }
 
-        // Create pivot at base of plant
-        pivot = new GameObject("ShadowPivot");
         pivot.transform.parent = transform;
         pivot.transform.localPosition = Vector3.zero;
 
-        // Create shadow as child of pivot
-        shadow = new GameObject("Shadow");
         shadow.transform.parent = pivot.transform;
         shadow.transform.localPosition = shadowOffset;
 
+
+        if (shadow == null)
+        {
+            Debug.Log("shadow is null");
+        }
+
         // Copy sprite
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-        spriteRenderer = shadow.AddComponent<SpriteRenderer>();
-        if (growPlant != null && growPlant.StageIndex != 0) { spriteRenderer.sprite = renderer.sprite; }
+        spriteRenderer.sprite = null;
+
+        if (growPlant != null && growPlant.StageIndex != 0) { 
+            spriteRenderer.sprite = renderer.sprite;
+        }
+        
         spriteRenderer.material = material;
 
         spriteRenderer.sortingLayerName = renderer.sortingLayerName;
@@ -79,7 +100,7 @@ public class Shadow : MonoBehaviour
         if (timer > dayDuration)
             timer = 0f;
 
-        float t = timer / dayDuration;
+        float t = (timeManager.TimeOfDay / timeManager.DayLength);
 
         Vector3 currentOffset;
         Vector3 currentScale;

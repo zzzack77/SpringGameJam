@@ -452,6 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af3f38bd4a04704f848b727d296a19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  material: {fileID: 2100000, guid: 587c6ae8dcc457b4f9bb285758cbb5ce, type: 2}
   shadowOffset_Sunrise: {x: 0.16, y: 0.4, z: 0}
   shadowScale_Sunrise: {x: -1, y: 1.65, z: 1}
   shadowRotation_Sunrise: {x: 0, y: 0, z: 90}
@@ -464,7 +465,6 @@ MonoBehaviour:
   shadowOffset: {x: 0.16, y: 0.4, z: 0}
   shadowScale: {x: -1, y: 1.65, z: 1}
   rotation: {x: 0, y: 0, z: 90}
-  material: {fileID: 2100000, guid: 587c6ae8dcc457b4f9bb285758cbb5ce, type: 2}
   dayDuration: 60
   timer: 0
 --- !u!212 &196506444
@@ -758,6 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af3f38bd4a04704f848b727d296a19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shadow
+  material: {fileID: 2100000, guid: 587c6ae8dcc457b4f9bb285758cbb5ce, type: 2}
   shadowOffset_Sunrise: {x: 0.16, y: 0.4, z: 0}
   shadowScale_Sunrise: {x: -1, y: 1.65, z: 1}
   shadowRotation_Sunrise: {x: 0, y: 0, z: 90}
@@ -770,7 +771,6 @@ MonoBehaviour:
   shadowOffset: {x: 0, y: 0, z: 0}
   shadowScale: {x: 1, y: 0.5, z: 1}
   rotation: {x: 0, y: 0, z: 5}
-  material: {fileID: 2100000, guid: 587c6ae8dcc457b4f9bb285758cbb5ce, type: 2}
   dayDuration: 60
   timer: 0
 --- !u!212 &766765684
@@ -940,7 +940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6613582819967695043, guid: 28f7997f205b0ab488e6d807bab34497, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7041887665498082192, guid: 28f7997f205b0ab488e6d807bab34497, type: 3}
       propertyPath: m_LocalPosition.x
