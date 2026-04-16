@@ -32,6 +32,10 @@ public class TimeManager : MonoBehaviour
     {
         get { return currentTimeOfDay; }
     }
+    public float DayLength
+    {
+        get { return dayLength; }
+    }
 
     [SerializeField] private float startingDay = 50;
 
