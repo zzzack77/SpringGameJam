@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 22e92afa31de63742a9ae835f1bd0aa1
+guid: 815b97463c5e1bd40aca128c0ad147e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -156426988367244748
-    second: RainSprite_0
+      213: -3051024443518760002
+    second: RainSpriteV2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RainSprite_0
+      name: RainSpriteV2_0
       rect:
         serializedVersion: 2
         x: 3
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 432161d9b7244ddf0800000000000000
-      internalID: -156426988367244748
+      spriteID: ebbc7030f6598a5d0800000000000000
+      internalID: -3051024443518760002
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RainSprite_0: -156426988367244748
+      RainSpriteV2_0: -3051024443518760002
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
