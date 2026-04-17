@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19dde987e8655ab44b5504a8b6279587, type: 3}
+  m_Name: Sunflower
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  plantName: Sunflower Plant
+  plantSprites:
+  - {fileID: -256329436847572505, guid: 47eae988ffbb99145a75cc9463c3bca3, type: 3}
+  - {fileID: -7039873942469640697, guid: 47eae988ffbb99145a75cc9463c3bca3, type: 3}
+  - {fileID: 8782663904212672053, guid: 47eae988ffbb99145a75cc9463c3bca3, type: 3}
+  - {fileID: 3606243134133044992, guid: 47eae988ffbb99145a75cc9463c3bca3, type: 3}
+  - {fileID: 7666367429017818220, guid: 47eae988ffbb99145a75cc9463c3bca3, type: 3}
+  - {fileID: -4782665449679226813, guid: 47eae988ffbb99145a75cc9463c3bca3, type: 3}
+  - {fileID: 466263913694700217, guid: 47eae988ffbb99145a75cc9463c3bca3, type: 3}
+  seedPrice: 25
+  growthTime: 150
+  needsWater: 0
+  regrows: 0
+  harvestPrice: 45
+  worseHarvestPrice: 35
+  deathTime: 20
+  harvestIndex: 4
+  worseHarvestIndex: 5

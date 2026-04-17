@@ -140,7 +140,7 @@ public class GridManager : MonoBehaviour
         // check if cell is ocupied
         if (cell.isOccupied) { return; }
 
-        GameObject obj;
+        GameObject obj = null;
 
         // Instantiate the object depending on idex or game object
         // if they fail return
@@ -154,12 +154,6 @@ public class GridManager : MonoBehaviour
                 MoneyManager.OnMoneySubtracted(growPlant.plantData.seedPrice);
                 obj = Instantiate(objectPrefab[index], worldPos, Quaternion.identity);
             }
-            else
-            {
-                canPlant = false;
-                obj = null;
-            }
-
         }
         else if (gameObject != null) { obj = Instantiate(gameObject, worldPos, Quaternion.identity); }
         else { return; }
