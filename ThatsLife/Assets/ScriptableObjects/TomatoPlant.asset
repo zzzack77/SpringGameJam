@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19dde987e8655ab44b5504a8b6279587, type: 3}
+  m_Name: TomatoPlant
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  plantName: Tomato Plant
+  plantSprites:
+  - {fileID: -8745833860196337387, guid: 6b971aaf0f898c4478629b1f786d38b0, type: 3}
+  - {fileID: -4624539095265213209, guid: 6b971aaf0f898c4478629b1f786d38b0, type: 3}
+  - {fileID: 4266356525366653701, guid: 6b971aaf0f898c4478629b1f786d38b0, type: 3}
+  - {fileID: -5714969346470361261, guid: 6b971aaf0f898c4478629b1f786d38b0, type: 3}
+  - {fileID: -9177098957068956627, guid: 6b971aaf0f898c4478629b1f786d38b0, type: 3}
+  - {fileID: 5473263777915703485, guid: 6b971aaf0f898c4478629b1f786d38b0, type: 3}
+  - {fileID: 9034023504433715121, guid: 6b971aaf0f898c4478629b1f786d38b0, type: 3}
+  seedPrice: 12
+  growthTime: 130
+  needsWater: 0
+  regrows: 0
+  harvestPrice: 25
+  worseHarvestPrice: 18
+  deathTime: 20
+  harvestIndex: 4
+  worseHarvestIndex: 5

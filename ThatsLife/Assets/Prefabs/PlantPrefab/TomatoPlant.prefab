@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7013195615027907955}
   - component: {fileID: 2485092740913990269}
   m_Layer: 0
-  m_Name: PalmLily
+  m_Name: TomatoPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ac0ab7020d56041b85aa38915eb2f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrowPlant
-  plantData: {fileID: 11400000, guid: f1abf1aee8b6f904caf886608305016d, type: 2}
+  plantData: {fileID: 11400000, guid: 831b30566cfc9c0418549dc4a3c11cac, type: 2}
 --- !u!114 &5174610588104351539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b6274b99e388b4bac991801ac33312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HarvestPlant
-  plantData: {fileID: 11400000, guid: f1abf1aee8b6f904caf886608305016d, type: 2}
+  plantData: {fileID: 11400000, guid: 831b30566cfc9c0418549dc4a3c11cac, type: 2}
   popupText: {fileID: 853780678110682744, guid: 3247fe7a3fbe0bf41a2563a0e646be39, type: 3}
   harvestSounds:
   - {fileID: 8874174506319031573, guid: 6c7fd6c51c4514249b0c0edee39c378e, type: 3}

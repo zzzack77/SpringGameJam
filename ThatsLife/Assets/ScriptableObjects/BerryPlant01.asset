@@ -21,12 +21,12 @@ MonoBehaviour:
   - {fileID: 1120195618, guid: aa109cdb8d2d871459fdb31065882ef0, type: 3}
   - {fileID: -1055055520, guid: aa109cdb8d2d871459fdb31065882ef0, type: 3}
   - {fileID: -584589845, guid: aa109cdb8d2d871459fdb31065882ef0, type: 3}
-  seedPrice: 4
-  growthTime: 50
+  seedPrice: 3
+  growthTime: 80
   needsWater: 0
   regrows: 0
   harvestPrice: 10
   worseHarvestPrice: 7
-  deathTime: 5
+  deathTime: 15
   harvestIndex: 4
   worseHarvestIndex: 5

@@ -4,8 +4,22 @@ using UnityEngine;
 public class MoneyManager : MonoBehaviour
 {
     public static event Action<int> OnMoneyUpdated;
-    public int money;
-    [SerializeField] private int maxMoney = 9999;
+    public static Action<int> OnMoneyAdded;
+    public static Action<int> OnMoneySubtracted;
+    public int money = 100;
+    [SerializeField] private int maxMoney = 1000000;
+
+    private void OnEnable()
+    {
+        OnMoneyAdded += AddMoney;
+        OnMoneySubtracted += SubtractMoney;
+    }
+
+    private void OnDisable()
+    {
+        OnMoneyAdded -= AddMoney;
+        OnMoneySubtracted -= SubtractMoney;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,13 +32,13 @@ public class MoneyManager : MonoBehaviour
         
     }
 
-    public void AddMoney(int moneyAmount)
+    private void AddMoney(int moneyAmount)
     {
         money = Mathf.Clamp(money + moneyAmount, 0, maxMoney);
         OnMoneyUpdated?.Invoke(money);
     }
 
-    public void SubtractMoney(int moneyAmount)
+    private void SubtractMoney(int moneyAmount)
     {
         money = Mathf.Clamp(money - moneyAmount, 0, maxMoney);
         OnMoneyUpdated?.Invoke(money);

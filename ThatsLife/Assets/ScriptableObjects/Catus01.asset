@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 6467380190338441496, guid: 91fb467320acaec41b16c27edd7a1479, type: 3}
   - {fileID: 706218366233045107, guid: 91fb467320acaec41b16c27edd7a1479, type: 3}
   - {fileID: -8798472975560635296, guid: 91fb467320acaec41b16c27edd7a1479, type: 3}
-  seedPrice: 4
+  seedPrice: 7
   growthTime: 120
   needsWater: 0
   regrows: 0

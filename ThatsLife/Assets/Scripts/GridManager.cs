@@ -22,6 +22,14 @@ public class GridManager : MonoBehaviour
 
     public CellData[,] grid;
 
+
+    private MoneyManager moneyManager;
+    private bool canPlant;
+
+    private void Awake()
+    {
+        moneyManager = FindAnyObjectByType<MoneyManager>();
+    }
     void Start()
     {
         
@@ -96,11 +104,11 @@ public class GridManager : MonoBehaviour
                 tileHightlight.transform.position = new Vector3(gridPos.x, gridPos.y, 0);
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 PlaceObject(gridPos.x, gridPos.y, currentPrefabIndex);
             }
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButton(1))
             {
                 RemoveObject(gridPos.x, gridPos.y);
             }
@@ -136,7 +144,23 @@ public class GridManager : MonoBehaviour
 
         // Instantiate the object depending on idex or game object
         // if they fail return
-        if (index != -1) { obj = Instantiate(objectPrefab[index], worldPos, Quaternion.identity); }
+        if (index != -1) 
+        { 
+            GrowPlant growPlant = objectPrefab[index].GetComponent<GrowPlant>();
+
+            if (moneyManager.money >= growPlant.plantData.seedPrice)
+            {
+                canPlant = true;
+                MoneyManager.OnMoneySubtracted(growPlant.plantData.seedPrice);
+                obj = Instantiate(objectPrefab[index], worldPos, Quaternion.identity);
+            }
+            else
+            {
+                canPlant = false;
+                obj = null;
+            }
+
+        }
         else if (gameObject != null) { obj = Instantiate(gameObject, worldPos, Quaternion.identity); }
         else { return; }
 
@@ -150,10 +174,15 @@ public class GridManager : MonoBehaviour
             Destroy(cell.placedObject);
         }
 
-        cell.placedObject = obj;
-        cell.isOccupied = true;
+        if (obj != null)
+        {
+            cell.placedObject = obj;
+            cell.isOccupied = true;
+            Debug.Log($"Placed at: {x},{y}");
+        }
+        
 
-        Debug.Log($"Placed at: {x},{y}");
+        
     }
     public void RemoveObject(int x, int y)
     {

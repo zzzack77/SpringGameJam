@@ -20,10 +20,5 @@ public class Plant : MonoBehaviour
     void Update()
     {
         growPlant.Grow();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            harvestPlant.Harvest();
-        }
     }
 }
