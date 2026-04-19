@@ -114,6 +114,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -131,9 +144,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e62ddd226569a9a4d8cc452dafd35d0a
+      spriteID: 01d76091956c423c0800000000000000
       internalID: -4385162051177775856
       vertices: []
       indices: 
@@ -153,9 +166,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 35d23a9f10564a14a94324a93755775e
+      spriteID: cd105d112999d3790800000000000000
       internalID: -7548708547759636004
       vertices: []
       indices: 
@@ -175,9 +188,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2d454834231c3b4499b696df8d0090b2
+      spriteID: e65b52257b4480370800000000000000
       internalID: 8288950668323304814
       vertices: []
       indices: 
@@ -197,9 +210,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d7b85f2c01f52374a83d7ee60c718aa4
+      spriteID: 1e392efeac6c44ee0800000000000000
       internalID: -1277677819356081183
       vertices: []
       indices: 
@@ -219,9 +232,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a54045af8e364bf47941be31f6f4f53d
+      spriteID: 2e497b787a4a2a2c0800000000000000
       internalID: -4421790844680956702
       vertices: []
       indices: 
@@ -241,9 +254,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 86941165db4b3754f85085fcbd2cf771
+      spriteID: b689c463845be50f0800000000000000
       internalID: -1126263535042783125
       vertices: []
       indices: 
@@ -263,9 +276,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c718f9c8220cea9419e5459e34b886e5
+      spriteID: 60f75a4730610e4a0800000000000000
       internalID: -6566224052608467194
       vertices: []
       indices: 
@@ -275,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a9e9f01e6c5ae7d47aa4244c26ff15b2
+    spriteID: 09edd0a1fb864ba4f99583767a8388ca
     internalID: 0
     vertices: []
     indices: 
@@ -285,7 +298,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.1666666716337204},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       PalmLily_0: -4385162051177775856
       PalmLily_1: -7548708547759636004

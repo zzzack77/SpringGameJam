@@ -152,10 +152,6 @@ MonoBehaviour:
   - {fileID: 14673717500883367, guid: 2216d2af89324a640828304505e529d5, type: 3}
   - {fileID: 2563526499630928100, guid: 0490b4440a29e514b8784c400aa2a623, type: 3}
   - {fileID: 80292738359763959, guid: 2a7c0ce98711722449f44ce42cebf525, type: 3}
-  badHarvestSounds:
-  - {fileID: 5970333726037176292, guid: 0aabae8f9df87fe43a4824a5888ba963, type: 3}
-  - {fileID: 6795704603003105729, guid: fd5e113fb29938849ac83c3af10818bb, type: 3}
-  - {fileID: 6264901397217308331, guid: c217027e9ec03dd4ebe2675ea147b6e9, type: 3}
 --- !u!114 &2485092740913990269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,13 +165,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shadow
   material: {fileID: 2100000, guid: 587c6ae8dcc457b4f9bb285758cbb5ce, type: 2}
-  shadowOffset_Sunrise: {x: 0.16, y: 0.4, z: 0}
+  shadowOffset_Sunrise: {x: 0.1, y: 0.31, z: 0}
   shadowScale_Sunrise: {x: -1, y: 1.65, z: 1}
   shadowRotation_Sunrise: {x: 0, y: 0, z: 90}
-  shadowOffset_Midday: {x: 0, y: 0.26, z: 0}
+  shadowOffset_Midday: {x: 0, y: 0.2, z: 0}
   shadowScale_Midday: {x: -1, y: 0.8, z: 1}
   shadowRotation_Midday: {x: 0, y: 0, z: 180}
-  shadowOffset_Sunset: {x: -0.16, y: 0.4, z: 0}
+  shadowOffset_Sunset: {x: -0.1, y: 0.31, z: 0}
   shadowScale_Sunset: {x: -1, y: 1.65, z: 1}
   shadowRotation_Sunset: {x: 0, y: 0, z: 270}
   shadowOffset: {x: 0, y: 0, z: 0}

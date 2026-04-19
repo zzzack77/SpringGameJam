@@ -40,7 +40,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private float startingDay = 0;
 
     private int currentYear = 1;
-
+    [SerializeField] private GameObject mainMenuMusicLoop;
     [SerializeField] private GameObject winterMusicLoop;
     [SerializeField] private GameObject springMusicLoop;
     [SerializeField] private GameObject summerMusicLoop;
@@ -72,7 +72,8 @@ public class TimeManager : MonoBehaviour
         OnSeasonChanged?.Invoke(currentSeason);
         OnYearChanged?.Invoke(currentYear);
 
-        SetSeasonMusic();
+
+        AudioManager.instance.SpawnMusic(mainMenuMusicLoop);
     }
 
     // Update is called once per frame
@@ -147,6 +148,7 @@ public class TimeManager : MonoBehaviour
     private void OnGamePlay()
     {
         Time.timeScale = timeScaler;
+        SetSeasonMusic();
     }
 
     private void OnGamePause()

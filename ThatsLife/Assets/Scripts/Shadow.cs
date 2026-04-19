@@ -41,7 +41,7 @@ public class Shadow : MonoBehaviour
     {
         timeManager = FindAnyObjectByType<TimeManager>();
         growPlant = GetComponent<GrowPlant>();
-        
+
         if (transform.childCount > 0)
         {
             pivot = transform.Find("ShadowPivot").gameObject;
@@ -50,7 +50,7 @@ public class Shadow : MonoBehaviour
             Debug.Log(pivot);
             Debug.Log(shadow);
         }
-        else 
+        else
         {
             pivot = new GameObject("ShadowPivot");
             shadow = new GameObject("Shadow");
@@ -74,10 +74,11 @@ public class Shadow : MonoBehaviour
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = null;
 
-        if (growPlant != null && growPlant.StageIndex != 0) { 
+        if (growPlant != null && growPlant.StageIndex != 0)
+        {
             spriteRenderer.sprite = renderer.sprite;
         }
-        
+
         spriteRenderer.material = material;
 
         spriteRenderer.sortingLayerName = renderer.sortingLayerName;
