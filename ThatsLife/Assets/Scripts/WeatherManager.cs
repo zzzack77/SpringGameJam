@@ -12,7 +12,7 @@ public class WeatherManager : MonoBehaviour
     [SerializeField] private GameObject sunPivot;
     [SerializeField] private GameObject sun;
 
-    private float sunnyTime = 2;
+    private float sunnyTime = 120;
     private float sunnyTimeVariation = 30;
     private float rainTime = 30;
     private float rainTimeVariation = 10;
