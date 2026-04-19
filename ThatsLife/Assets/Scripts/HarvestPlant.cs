@@ -13,7 +13,7 @@ public class HarvestPlant : MonoBehaviour, IHarvestable
     [SerializeField] private GameObject popupText;
 
     [SerializeField] private GameObject[] harvestSounds;
-    [SerializeField] private GameObject[] badHarvestSounds;
+    
     private void Awake()
     {
         plant = GetComponent<Plant>();
@@ -61,7 +61,7 @@ public class HarvestPlant : MonoBehaviour, IHarvestable
         }
 
         // Play dud harvest sound (duller/ bad sound for harvesting at wrong time)
-        if (harvestSounds != null && badHarvestSounds.Length > 0) AudioManager.instance.SpawnRandomAudio(badHarvestSounds);
+        
     }
 
 }
