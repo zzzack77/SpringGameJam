@@ -6,40 +6,27 @@ public class WeatherManager : MonoBehaviour
     private TimeManager timeManager;
 
     [SerializeField] private GameObject rainAudio;
-    //[SerializeField] private GameObject rainGameObject;
+    private GameObject rainGameObject;
     [SerializeField] private ParticleSystem rainParticles;
-
-    private bool rainActive = false;
-
-    // used to set in inspector
-    [SerializeField] private bool setRainOn;
 
     [SerializeField] private GameObject sunPivot;
     [SerializeField] private GameObject sun;
 
-    private float sunnyTime = 180;
+    private float sunnyTime = 2;
     private float sunnyTimeVariation = 30;
     private float rainTime = 30;
-    private float rainTimeVariation = 15;
+    private float rainTimeVariation = 10;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         timeManager = FindAnyObjectByType<TimeManager>();
         StartCoroutine(TurnOnRainCycle());
-        //AudioManager.instance.SpawnAudio(rainAudio);
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rainActive != setRainOn)
-        {
-            rainActive = setRainOn;
-            UpdateRain(rainActive);
-        }
         UpdateSunPos();
     }
 
@@ -62,18 +49,33 @@ public class WeatherManager : MonoBehaviour
     // set true to turn rain on, false to turn off
     public void UpdateRain(bool rainBool)
     {
-        rainActive = rainBool;
-        setRainOn = rainBool;
-        //rainGameObject.SetActive(rainBool);
-        if (rainBool) rainParticles.Play();
-        else rainParticles.Stop();
+
         if (rainBool)
         {
-            //AudioManager.instance.SpawnAudio(rainAudio);
+            rainParticles.Play();
+            AudioManager.instance.SpawnAudioWithOut(rainAudio, out rainGameObject);
+        }
+        else if (rainGameObject != null)
+        {
+            rainParticles.Stop();
+            StartCoroutine(FadeRainOut());
         }
         else
         {
-            // Destroy audio (prefereable fade out)
+            rainParticles.Stop();
+        }
+    }
+    IEnumerator FadeRainOut()
+    {
+        AudioSource rainGeeza = rainGameObject.GetComponent<AudioSource>();
+        rainGeeza.volume -= 0.05f;
+        yield return new WaitForSeconds(0.1f);
+        if (rainGeeza.volume > 0) { StartCoroutine(FadeRainOut()); }
+        else
+        {
+            AudioManager.instance.RemoveAudio(rainGameObject);
+            Destroy(rainGameObject);
+            yield return null;
         }
     }
 }

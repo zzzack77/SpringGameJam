@@ -63,7 +63,7 @@ public class CameraMov : MonoBehaviour
         rightEdge = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width - uiOffset, Screen.height / 2f, 0f));
         topEdge = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2f, Screen.height, 0f));
         bottomEdge = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2f, 0f, 0f));
-        Debug.Log(rightEdge.x);
+        //Debug.Log(rightEdge.x);
 
         
 
