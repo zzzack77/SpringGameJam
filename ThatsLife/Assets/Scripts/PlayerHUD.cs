@@ -1,12 +1,22 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHUD : MonoBehaviour
 {
+    [Header("UI Text")]
     [SerializeField] private TextMeshProUGUI dayText;
     [SerializeField] private TextMeshProUGUI seasonText;
     [SerializeField] private TextMeshProUGUI yearText;
     [SerializeField] private TextMeshProUGUI moneyText;
+
+    [Header("Season Image")]
+    [SerializeField] private Image seasonImage;
+    [SerializeField] private Sprite winterImage;
+    [SerializeField] private Sprite springImage;
+    [SerializeField] private Sprite summerImage;
+    [SerializeField] private Sprite autumnImage;
+
 
     private void OnEnable()
     {
@@ -14,6 +24,8 @@ public class PlayerHUD : MonoBehaviour
         TimeManager.OnSeasonChanged += UpdateSeasonText;
         TimeManager.OnYearChanged += UpdateYearText;
         MoneyManager.OnMoneyUpdated += UpdateMoneyText;
+
+        TimeManager.OnSeasonChanged += UpdateSeasonImage;
     }
 
     private void OnDisable()
@@ -22,6 +34,8 @@ public class PlayerHUD : MonoBehaviour
         TimeManager.OnSeasonChanged -= UpdateSeasonText;
         TimeManager.OnYearChanged -= UpdateYearText;
         MoneyManager.OnMoneyUpdated -= UpdateMoneyText;
+
+        TimeManager.OnSeasonChanged -= UpdateSeasonImage;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,5 +67,28 @@ public class PlayerHUD : MonoBehaviour
     private void UpdateMoneyText(int moneyAmount)
     {
         moneyText.text = "$" + moneyAmount.ToString();
+    }
+
+    private void UpdateSeasonImage(Season currentSeason)
+    {
+        if (seasonImage != null)
+        {
+            switch (currentSeason)
+            {
+                case Season.Winter:
+                    seasonImage.sprite = winterImage;
+                    break;
+                case Season.Spring:
+                    seasonImage.sprite = springImage;
+                    break;
+                case Season.Summer:
+                    seasonImage.sprite = summerImage;
+                    break;
+                case Season.Autumn:
+                    seasonImage.sprite = autumnImage;
+                    break;
+            }
+        }
+        
     }
 }

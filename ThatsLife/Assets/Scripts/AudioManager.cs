@@ -41,6 +41,14 @@ public class AudioManager : MonoBehaviour
         soundPrefabs.Add(sound);
     }
 
+    // Use this if you want to keep track of the spawned sound object
+    public void SpawnAudioWithOut(GameObject soundPrefab, out GameObject spawnedSound)
+    {
+        spawnedSound = Instantiate(soundPrefab, transform.position, Quaternion.identity);
+
+        soundPrefabs.Add(spawnedSound);
+    }
+
     public void RemoveAudio(GameObject soundPrefab)
     {
         if (soundPrefabs.Contains(soundPrefab))
