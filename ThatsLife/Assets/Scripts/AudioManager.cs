@@ -83,15 +83,18 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator MusicFadeWait(GameObject musicPrefab, AudioSource musicSource)
     {
-        while (musicSource.volume > 0f)
+        if (musicSource != null)
         {
-            musicSource.volume -= musicFadeRate * Time.deltaTime;
-            yield return null;
+            while (musicSource.volume > 0f)
+            {
+                musicSource.volume -= musicFadeRate * Time.deltaTime;
+                yield return null;
+            }
+
+            musicSource.volume = 0f;
+
+            Destroy(currentMusicPrefab);
+            currentMusicPrefab = Instantiate(musicPrefab, transform.position, Quaternion.identity);
         }
-
-        musicSource.volume = 0f;
-
-        Destroy(currentMusicPrefab);
-        currentMusicPrefab = Instantiate(musicPrefab, transform.position, Quaternion.identity);
     }
 }
