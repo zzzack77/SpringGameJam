@@ -469,7 +469,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.9103774, b: 0.9103774, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000710f1a78
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.608
+  m_FalloffIntensity: 0.371
   m_Color: {r: 1, g: 0.95899606, b: 0.8915094, a: 1}
   m_Intensity: 2.47
   m_LightVolumeIntensity: 1
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeatherManager
   rainAudio: {fileID: 0}
-  rainParticles: {fileID: 5804319554651092823}
+  rainParticles: {fileID: 5062851940374475988}
   setRainOn: 0
   sunPivot: {fileID: 3112214815964042170}
   sun: {fileID: 9035348997702749322}
@@ -1680,7 +1680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4682057358885055795
 Transform:
   m_ObjectHideFlags: 0
@@ -2990,7 +2990,7 @@ ParticleSystem:
         ctime7: 0
         atime0: 0
         atime1: 7903
-        atime2: 56476
+        atime2: 65535
         atime3: 65535
         atime4: 65535
         atime5: 0
@@ -2999,7 +2999,7 @@ ParticleSystem:
         m_Mode: 0
         m_ColorSpace: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 4
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
