@@ -37,7 +37,7 @@ public class TimeManager : MonoBehaviour
         get { return dayLength; }
     }
 
-    [SerializeField] private float startingDay = 50;
+    [SerializeField] private float startingDay = 0;
 
     private int currentYear = 1;
 
@@ -92,12 +92,12 @@ public class TimeManager : MonoBehaviour
 
             currentTimeOfDay = 0f;
             // Check to see what season we are in based on the day
-            if (dayNumber >= 0 && dayNumber < 79 || dayNumber > 335) { currentSeason = Season.Winter; } // Winter
-            else if (dayNumber >= 79 && dayNumber < 152) { currentSeason = Season.Spring; } // Spring
-            else if (dayNumber >= 152 && dayNumber < 243) { currentSeason = Season.Summer; } // Summer
-            else if (dayNumber >= 243 && dayNumber < 335) { currentSeason = Season.Autumn; } // Autumn
+            if (dayNumber >= 0 && dayNumber < 26 || dayNumber > 100) { currentSeason = Season.Winter; } // Winter
+            else if (dayNumber >= 26 && dayNumber < 51) { currentSeason = Season.Spring; } // Spring
+            else if (dayNumber >= 51 && dayNumber < 76) { currentSeason = Season.Summer; } // Summer
+            else if (dayNumber >= 76 && dayNumber < 101) { currentSeason = Season.Autumn; } // Autumn
             
-            if (dayNumber == 366) 
+            if (dayNumber == 101) 
             { 
                 totalGameTime = 0;
                 currentYear += 1;
