@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: 91fb467320acaec41b16c27edd7a1479
+guid: bdaf14cfa187e924783e6df137072d42
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6720470015882149057
-    second: Catus01_0
+      213: -4263110443669972236
+    second: GooseFam_0
   - first:
-      213: 8705381200574303380
-    second: Catus01_1
+      213: -601031414539422438
+    second: GooseFam_1
   - first:
-      213: 2605261342205402099
-    second: Catus01_2
+      213: -1832293512309988498
+    second: GooseFam_2
   - first:
-      213: -3530201261169217853
-    second: Catus01_3
+      213: -3517224159732422269
+    second: GooseFam_3
   - first:
-      213: 6467380190338441496
-    second: Catus01_4
-  - first:
-      213: 706218366233045107
-    second: Catus01_5
-  - first:
-      213: -8798472975560635296
-    second: Catus01_6
+      213: -8369076782588487399
+    second: GooseFam_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -131,155 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Catus01_0
+      name: GooseFam_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 48
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16666667}
+        x: 13
+        y: 1
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f334eab80281cb2a0800000000000000
-      internalID: -6720470015882149057
+      spriteID: 4fa1bce63a366d4c0800000000000000
+      internalID: -4263110443669972236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Catus01_1
+      name: GooseFam_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 29
         y: 0
-        width: 48
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16666667}
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49c489e241abfc870800000000000000
-      internalID: 8705381200574303380
+      spriteID: a15f685ec15b8a7f0800000000000000
+      internalID: -601031414539422438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Catus01_2
+      name: GooseFam_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16666667}
+        x: 44
+        y: 1
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3fbd531336fb72420800000000000000
-      internalID: 2605261342205402099
+      spriteID: e63a28a22c26296e0800000000000000
+      internalID: -1832293512309988498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Catus01_3
+      name: GooseFam_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 59
         y: 0
-        width: 48
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16666667}
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ce6f5228a4320fc0800000000000000
-      internalID: -3530201261169217853
+      spriteID: 3892ab3034f403fc0800000000000000
+      internalID: -3517224159732422269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Catus01_4
+      name: GooseFam_4
       rect:
         serializedVersion: 2
-        x: 192
+        x: 74
         y: 0
-        width: 48
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16666667}
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 81165887400c0c950800000000000000
-      internalID: 6467380190338441496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Catus01_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16666667}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3786d25ccddfcc900800000000000000
-      internalID: 706218366233045107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Catus01_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 48
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.16666667}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 06c85dde17b85e580800000000000000
-      internalID: -8798472975560635296
+      spriteID: 91918dbe1011bdb80800000000000000
+      internalID: -8369076782588487399
       vertices: []
       indices: 
       edges: []
@@ -288,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4cf4b1ac048f8b64fa12100969030d54
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -296,17 +246,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.1666666716337204},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Catus01_0: -6720470015882149057
-      Catus01_1: 8705381200574303380
-      Catus01_2: 2605261342205402099
-      Catus01_3: -3530201261169217853
-      Catus01_4: 6467380190338441496
-      Catus01_5: 706218366233045107
-      Catus01_6: -8798472975560635296
+      GooseFam_0: -4263110443669972236
+      GooseFam_1: -601031414539422438
+      GooseFam_2: -1832293512309988498
+      GooseFam_3: -3517224159732422269
+      GooseFam_4: -8369076782588487399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

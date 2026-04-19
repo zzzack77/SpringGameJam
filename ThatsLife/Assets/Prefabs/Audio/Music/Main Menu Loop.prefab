@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1059243181823738156}
   - component: {fileID: 6046257473333698590}
-  - component: {fileID: 5268640262340249768}
   m_Layer: 0
-  m_Name: RainLoop
+  m_Name: Main Menu Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 9ee2ef9031be63b42899d74413a84a01, type: 3}
+  m_Resource: {fileID: 8300000, guid: eecdc9906578bdb468c526cce2ab9d42, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -130,15 +129,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5268640262340249768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6984951134491093875}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a65f4967c84b3b047848d866beafc8aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MusicFader
