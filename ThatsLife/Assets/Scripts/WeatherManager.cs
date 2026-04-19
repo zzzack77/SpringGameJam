@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class WeatherManager : MonoBehaviour
@@ -5,7 +6,9 @@ public class WeatherManager : MonoBehaviour
     private TimeManager timeManager;
 
     [SerializeField] private GameObject rainAudio;
-    [SerializeField] private GameObject rainParticles;
+    //[SerializeField] private GameObject rainGameObject;
+    [SerializeField] private ParticleSystem rainParticles;
+
     private bool rainActive = false;
 
     // used to set in inspector
@@ -14,11 +17,19 @@ public class WeatherManager : MonoBehaviour
     [SerializeField] private GameObject sunPivot;
     [SerializeField] private GameObject sun;
 
+    private float sunnyTime = 180;
+    private float sunnyTimeVariation = 30;
+    private float rainTime = 30;
+    private float rainTimeVariation = 15;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         timeManager = FindAnyObjectByType<TimeManager>();
+        StartCoroutine(TurnOnRainCycle());
         //AudioManager.instance.SpawnAudio(rainAudio);
+
+
     }
 
     // Update is called once per frame
@@ -30,6 +41,16 @@ public class WeatherManager : MonoBehaviour
             UpdateRain(rainActive);
         }
         UpdateSunPos();
+    }
+
+    IEnumerator TurnOnRainCycle()
+    {
+        UpdateRain(false);
+        yield return new WaitForSeconds(Random.Range(sunnyTime - sunnyTimeVariation, sunnyTime + sunnyTimeVariation));
+        UpdateRain(true);
+        yield return new WaitForSeconds(Random.Range(rainTime - rainTimeVariation, rainTime + rainTimeVariation));
+        
+        StartCoroutine(TurnOnRainCycle());
     }
     private void UpdateSunPos()
     {
@@ -43,7 +64,9 @@ public class WeatherManager : MonoBehaviour
     {
         rainActive = rainBool;
         setRainOn = rainBool;
-        rainParticles.SetActive(rainBool);
+        //rainGameObject.SetActive(rainBool);
+        if (rainBool) rainParticles.Play();
+        else rainParticles.Stop();
         if (rainBool)
         {
             //AudioManager.instance.SpawnAudio(rainAudio);
