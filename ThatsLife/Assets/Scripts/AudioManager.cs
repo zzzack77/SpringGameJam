@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     private List<GameObject> soundPrefabs = new List<GameObject>();
 
+    [SerializeField] private int maxSounds = 7;
     private GameObject currentMusicPrefab;
     public float musicFadeRate = 0.1f;
     private void Awake()
@@ -36,6 +37,10 @@ public class AudioManager : MonoBehaviour
     // Use this to spawn in a sound prefab
     public void SpawnAudio(GameObject soundPrefab)
     {
+        if (soundPrefabs.Count < maxSounds)
+        {
+            
+        }
         GameObject sound = Instantiate(soundPrefab, transform.position, Quaternion.identity);
 
         soundPrefabs.Add(sound);
@@ -60,10 +65,13 @@ public class AudioManager : MonoBehaviour
     // Use this to spanwn a random prefab from an array
     public void SpawnRandomAudio(GameObject[] randomSounds)
     {
-        int randIndex = Random.Range(0, randomSounds.Length - 1);
-        GameObject sound = Instantiate(randomSounds[randIndex], transform.position, Quaternion.identity);
+        if (soundPrefabs.Count < maxSounds)
+        {
+            int randIndex = Random.Range(0, randomSounds.Length - 1);
+            GameObject sound = Instantiate(randomSounds[randIndex], transform.position, Quaternion.identity);
 
-        soundPrefabs.Add(sound);
+            soundPrefabs.Add(sound);
+        }
     }
 
     public void SpawnMusic(GameObject musicPrefab)

@@ -1,4 +1,5 @@
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 [System.Serializable]
@@ -26,9 +27,18 @@ public class GridManager : MonoBehaviour
     private MoneyManager moneyManager;
     private bool canPlant;
 
+    // The canvas that will store the UI popups
+    private GameObject popupCanvas;
+
+    // UI Text game object that will pop up with an animation
+    [SerializeField] private GameObject popupText;
+
+    [SerializeField] private GameObject[] plantSounds;
+
     private void Awake()
     {
         moneyManager = FindAnyObjectByType<MoneyManager>();
+        popupCanvas = GameObject.Find("UI Popups");
     }
     void Start()
     {
@@ -152,6 +162,19 @@ public class GridManager : MonoBehaviour
             {
                 canPlant = true;
                 MoneyManager.OnMoneySubtracted(growPlant.plantData.seedPrice);
+
+                if (popupCanvas != null || popupText != null)
+                {
+                    GameObject popup = Instantiate(popupText, worldPos, Quaternion.identity, popupCanvas.transform);
+                    popup.GetComponentInChildren<TextMeshProUGUI>().text = "-$" + growPlant.plantData.seedPrice.ToString();
+                }
+
+                if (plantSounds != null || plantSounds.Length > 0)
+                {
+                    AudioManager.instance.SpawnRandomAudio(plantSounds);
+                }
+                
+
                 obj = Instantiate(objectPrefab[index], worldPos, Quaternion.identity);
             }
         }
